@@ -75,33 +75,40 @@ This project was developed according to the specifications provided in the Roxil
 
 ## Getting Started
 
-```bash
+
 # 1. Clone the repository
+```bash
 git clone https://github.com/your-username/rating-app.git
 cd rating-app
 ```
-```bash
+
 # 2. Backend Setup
+```bash
 cd backend
 npm install
-
+```
+```bash
 # Create .env file in /backend with the following:
 PORT=5000
 DATABASE_URL=postgresql://postgres:1234@localhost:5432/rating_app
 JWT_SECRET=mysecretkey
 ```
-```bash
+
 # Start backend server
-npx nodemon server.js
-# Backend runs on http://localhost:5000
-```
 ```bash
+npx nodemon server.js
+```
+# Backend runs on http://localhost:5000
+
 # 3. Frontend Setup
+```bash
+
 cd ../frontend/rating-app
 npm install
 npm run dev
-# Frontend runs on http://localhost:5173
 ```
+# Frontend runs on http://localhost:5173
+
 
 # Screenshots :
 
