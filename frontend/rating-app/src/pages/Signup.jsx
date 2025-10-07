@@ -36,7 +36,13 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      const res = await register({ name, email, address, password, role: "user" });
+      const res = await register({
+        name,
+        email,
+        address,
+        password,
+        role: "user",
+      });
       setLoading(false);
 
       if (
@@ -65,11 +71,11 @@ export default function Signup() {
     }
   };
 
-  const hasError = (field) => validationErrors[field] || (err && err.includes(field));
+  const hasError = (field) =>
+    validationErrors[field] || (err && err.includes(field));
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-4 relative">
-
       {showNotification && (
         <div
           className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 ${notificationClass}`}
@@ -78,7 +84,9 @@ export default function Signup() {
           <div className="backdrop-blur-md bg-green-50/90 border border-green-200 rounded-xl shadow-lg p-4 flex items-center space-x-3 min-w-[320px] max-w-md">
             <FiCheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
             <div className="flex-1">
-              <div className="text-green-800 font-medium text-sm">Registration Complete 🎉</div>
+              <div className="text-green-800 font-medium text-sm">
+                Registration Complete 🎉
+              </div>
               <div className="text-green-700 text-xs">{successMessage}</div>
             </div>
           </div>
@@ -91,7 +99,9 @@ export default function Signup() {
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
               <FiUserPlus className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-white mb-1">Create Account</h1>
+            <h1 className="text-xl font-bold text-white mb-1">
+              Create Account
+            </h1>
             <p className="text-green-100 text-xs">Join our platform today</p>
           </div>
 
@@ -107,7 +117,10 @@ export default function Signup() {
 
             <form onSubmit={onSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-xs font-medium text-gray-700 mb-1"
+                >
                   Full Name <span className="text-gray-500">(20–60 chars)</span>
                 </label>
                 <div className="relative">
@@ -127,12 +140,17 @@ export default function Signup() {
                   />
                 </div>
                 {validationErrors.name && (
-                  <p className="text-red-500 text-xs mt-1">{validationErrors.name}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {validationErrors.name}
+                  </p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-medium text-gray-700 mb-1"
+                >
                   Email Address
                 </label>
                 <div className="relative">
@@ -152,12 +170,17 @@ export default function Signup() {
                   />
                 </div>
                 {validationErrors.email && (
-                  <p className="text-red-500 text-xs mt-1">{validationErrors.email}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {validationErrors.email}
+                  </p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="address" className="block text-xs font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="address"
+                  className="block text-xs font-medium text-gray-700 mb-1"
+                >
                   Address <span className="text-gray-500">(Max 400 chars)</span>
                 </label>
                 <div className="relative">
@@ -176,13 +199,21 @@ export default function Signup() {
                   />
                 </div>
                 {validationErrors.address && (
-                  <p className="text-red-500 text-xs mt-1">{validationErrors.address}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {validationErrors.address}
+                  </p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-xs font-medium text-gray-700 mb-1">
-                  Password <span className="text-gray-500">(8–16 chars, 1 uppercase, 1 special)</span>
+                <label
+                  htmlFor="password"
+                  className="block text-xs font-medium text-gray-700 mb-1"
+                >
+                  Password{" "}
+                  <span className="text-gray-500">
+                    (8–16 chars, 1 uppercase, 1 special)
+                  </span>
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -196,7 +227,9 @@ export default function Signup() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     className={`block w-full pl-9 pr-10 py-2 text-sm border ${
-                      hasError("password") ? "border-red-500" : "border-gray-300"
+                      hasError("password")
+                        ? "border-red-500"
+                        : "border-gray-300"
                     } rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200`}
                   />
                   <button
@@ -212,7 +245,9 @@ export default function Signup() {
                   </button>
                 </div>
                 {validationErrors.password && (
-                  <p className="text-red-500 text-xs mt-1">{validationErrors.password}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {validationErrors.password}
+                  </p>
                 )}
               </div>
 
