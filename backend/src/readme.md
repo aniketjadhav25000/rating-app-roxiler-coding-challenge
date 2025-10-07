@@ -1,142 +1,114 @@
-# Roxiler Systems Coding Challenge: [Your Rating App Name]
+# Roxiler Systems FullStack Intern Coding Challenge Solution: Rating App
 
 ## 🎯 Project Overview
 
-This repository contains the solution for the **Roxiler Systems Coding Challenge**.
+This repository contains the full-stack solution for the **Roxiler Systems Coding Challenge**.
 
-The project is a **[Briefly describe your application, e.g., "full-stack web application for rating and reviewing products/services"]**. It demonstrates competence in building a [Frontend Framework/Backend Framework] application with robust database management using PostgreSQL.
+[cite_start]The application is a web platform for rating stores (1-5 stars), built with **Role-Based Access Control (RBAC)** for System Administrator, Normal User, and Store Owner roles[cite: 1, 36, 55].
 
-### Key Features
+### Key Challenge Requirements Implemented
 
-* **User Authentication & Authorization:** Secure login and distinct roles (User and Admin).
-* **[Core Feature 1, e.g., Product Listing & Search]:** Dynamic display of items with filtering capabilities.
-* **[Core Feature 2, e.g., Rating Submission]:** Users can submit a rating (e.g., 1-5 stars) and a written review.
-* **[Core Feature 3, e.g., Admin Dashboard]:** A dedicated section for administrators to manage content and users.
+* [cite_start]**Authentication & Authorization:** Single login system with role-based access to functionalities[cite: 8, 9].
+* [cite_start]**Three User Roles:** Administrator, Normal User, and Store Owner[cite: 12, 13, 14].
+* [cite_start]**Strict Form Validation:** All forms (Signup, Add User, etc.) enforce the required minimum/maximum lengths and complexity rules for Name, Address, Email, and Password[cite: 63, 64, 65, 66, 67].
+* **Database Schema:** Implemented using **PostgreSQL** with tables for `users`, `stores`, and `ratings`.
 
 ---
 
-## 💻 Tech Stack
+## 💻 Tech Stack & Architecture
 
-The application is built using the following technologies:
+The project is divided into two distinct parts: a Frontend client and a Backend API.
 
-| Category | Technology | Version / Description |
+| Category | Technology | Description |
 | :--- | :--- | :--- |
-| **Frontend** | [Your Framework] | [e.g., React, Vue, Angular] + [e.g., CSS Modules, Tailwind CSS] |
-| **Backend** | [Your Framework/Language] | [e.g., Node.js with Express, Python with Django/Flask, Java with Spring Boot] |
-| **Database** | **PostgreSQL** (Managed via pgAdmin) | Robust, open-source object-relational database. |
-| **State Management** | [e.g., Redux, Zustand, React Context] | Used for efficient state handling. |
-| **Deployment/Hosting** | [e.g., Vercel, Heroku, AWS] | *[Optional: Mention if deployed]* |
+| **Frontend** | **ReactJS** (Vite) | Utilizes Vite for a fast development experience and React for the UI. |
+| **Styling** | **Tailwind CSS (CDN)** | Rapidly styling with utility classes via a CDN link. |
+| **Backend** | **Node.js with ExpressJS** | Serves the REST API and handles all business logic and database operations. |
+| **Database** | **PostgreSQL** | The application's data layer, managed locally via `pgAdmin 4`. |
+| **Routing** | **Frontend:** `react-router-dom` (implied by file structure) / **Backend:** Clear route separation (`adminRoutes.js`, `authRoutes.js`, etc.). |
+
+### Directory Structure
+
+The repository follows a clear segregated structure:
+<img width="589" height="496" alt="image" src="https://github.com/user-attachments/assets/4913a8e5-4859-4fc9-9f81-bf315fd68173" />
+
 
 ---
 
 ## 🚀 Getting Started
 
-Follow these steps to set up and run the project locally.
-
 ### Prerequisites
 
-You will need the following installed on your machine:
+* Node.js (v18+)
+* PostgreSQL Database Server (Local or Cloud)
 
-* Node.js (LTS version)
-* [Your Backend Language/Runtime, e.g., Python, Java]
-* **PostgreSQL** (Database Server)
+### Step 1: Backend & Database Setup
 
-### Installation Steps
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [Your Repository URL]
-    cd [Your Repo Folder Name]
-    ```
-
-2.  **Backend Setup:**
-    ```bash
-    # Navigate to the backend directory
-    cd backend/
-
-    # Install dependencies
-    npm install  # or yarn install, pip install -r requirements.txt, etc.
-
-    # Configure environment variables (e.g., .env file)
-    # Ensure DATABASE_URL is set correctly for your PostgreSQL instance.
-    ```
-
-3.  **Database Setup:**
-    * Start your PostgreSQL server.
-    * Create a database named `[Your Database Name, e.g., roxiler_ratings]`.
-    * Run migrations to set up the tables:
-        ```bash
-        # Command to run migrations (e.g., for Express/Knex)
-        npm run migrate
-        ```
-    * Run seed files to populate initial data:
-        ```bash
-        # Command to run seed files (e.g., an initial Admin user)
-        npm run seed
-        ```
-
-4.  **Frontend Setup:**
-    ```bash
-    # Navigate back to the root, then into the frontend directory
-    cd ../frontend/
-
-    # Install dependencies
-    npm install # or yarn install
-
-    # Configure API endpoint (e.g., .env file)
-    # Ensure VITE_API_URL or similar is pointing to your local backend server.
-    ```
-
-### Running the Application
-
-1.  **Start the Backend Server:**
+1.  **Navigate to the Backend:**
     ```bash
     cd backend/
-    npm start # or python manage.py runserver, etc.
-    # The server will run on [e.g., http://localhost:5000]
+    ```
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Configure Database:**
+    * Ensure your PostgreSQL service is running.
+    * Create a database named `rating_app` (or as configured in your `.env` file).
+    * Run database migrations to create the required tables (`users`, `stores`, `ratings`):
+        ```bash
+        # (Example migration command, adjust as per your framework)
+        npm run migrate 
+        ```
+    * The `users` table schema includes `id`, `name`, `email`, `password_hash`, `address`, and `role`.
+    * The `stores` table includes `owner_id` with an `ON DELETE SET NULL` Foreign Key constraint to the `users` table.
+4.  **Start the Backend Server:**
+    ```bash
+    npm start 
+    # Server running on http://localhost:5000
     ```
 
-2.  **Start the Frontend Application:**
+### Step 2: Frontend Setup
+
+1.  **Navigate to the Frontend Client:**
     ```bash
-    cd ../frontend/
-    npm run dev # or npm start
-    # The app will open in your browser on [e.g., http://localhost:3000]
+    cd ../frontend/rating-app/
+    ```
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the Frontend Development Server:**
+    ```bash
+    npm run dev
+    # The application will launch on a local port, e.g., http://localhost:5173
     ```
 
 ---
 
-## 🔐 User Roles and Access
+## 🔐 User Roles and Default Credentials
 
-The application utilizes a robust Role-Based Access Control (RBAC) system.
+The application uses an initial set of credentials for testing. **These should be reset immediately after the first login.**
 
-### **1. Standard User**
+### **Initial Credentials**
 
-| Feature | Access | Function |
-| :--- | :--- | :--- |
-| **Login ID** | `user@example.com` (or create a new account) | |
-| **Dashboard** | Limited View | View their own submitted ratings/reviews. |
-| **Ratings** | Full | Can submit, edit, and delete their own ratings/reviews. |
-| **Products** | View Only | Can browse all products and see aggregated scores. |
+| Role | Login ID (Email) | Password | Notes |
+| :--- | :--- | :--- | :--- |
+| **System Administrator** | `[Check your seed file]` | `[Check your seed file]` | [cite_start]Full management access (Add Stores, Add Users, etc.)[cite: 17]. |
+| **Store Owner** | `[Register or Check your seed file]` | `[N/A]` | [cite_start]Manages their store's ratings and view user submissions[cite: 58, 59, 60]. |
+| **Normal User** | `[Register via Signup page]` | `[N/A]` | [cite_start]Can view stores and submit/modify ratings[cite: 51, 52]. |
 
-### **2. Administrator (Admin)**
+### **Database Schema Details**
 
-| Feature | Access | Function |
-| :--- | :--- | :--- |
-| **Login ID** | `admin@roxiler.com` *(Check seed file for exact initial credentials)* | |
-| **Dashboard** | Full Access | Centralized panel to manage all data. |
-| **Users** | Full | Can view, deactivate, and delete user accounts. |
-| **Content** | Full | Can delete or edit any submitted ratings/reviews. |
-
-### **Initial Admin Credentials**
-
-| Credential | Value |
-| :--- | :--- |
-| **Admin Login ID** | `[Your Seeded Admin Email/Username]` |
-| **Admin Password** | `[Your Seeded Admin Password]` |
-| **Note** | *These credentials are created via the database seed file (`[path to seed file]`) and should be changed immediately after the first login.* |
+The `users` table contains the required user details: `name`, `email`, `address`, and `role`. The `role` column is the key differentiator for access control.
 
 ---
 
-## 📂 File Structure
+## ⚠️ Known Issues and Development Status
 
-The project follows a standard [e.g., monorepo, segregated] architecture:
+The following issues were observed during development and testing:
+
+1.  **User Deletion Error:** The Admin Dashboard's "Delete User" button results in a `DELETE http://localhost:5000/api/admin/users/2 404 (Not Found)` error, indicating the admin delete endpoint is missing or incorrectly configured.
+2.  **Store Creation Validation Error:** Attempting to create a new store results in a `500 Internal Server Error` and a message stating: `"Error creating store. Check if owner_id exists and is unique."` This suggests a server-side bug with either the `owner_id` lookup or a constraint violation when assigning the owner.
+
+These known issues highlight areas for further refinement in the backend controllers (`adminController.js`, `ownerController.js`) and corresponding API routes (`adminRoutes.js`).
