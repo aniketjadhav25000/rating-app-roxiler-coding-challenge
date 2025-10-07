@@ -1,7 +1,7 @@
 
 # FullStack Rating App – Roxiler Systems Coding Challenge
 
-This project is a Full-Stack Rating Application built as part of the Roxiler Systems FullStack Intern Coding Challenge (V1.1).  
+This project is a Full-Stack Rating Application built as part of the Roxiler Systems FullStack Intern Coding Challenge 
 It demonstrates the ability to design and implement a complete role-based rating system with authentication, secure backend APIs, and a modern frontend interface.
 
 The application enables different user roles (System Administrators, Normal Users, and Store Owners) to interact with the platform based on their access level.  
@@ -22,7 +22,9 @@ This project was developed according to the specifications provided in the Roxil
 
 ## Directory Structure
 
-(Images of backend & frontend folders will be inserted here)  
+<img width="443" height="580" alt="image" src="https://github.com/user-attachments/assets/f56940a7-d5ed-4fbe-8e56-eb3dfcdfd1ef" />
+
+<img width="661" height="884" alt="image" src="https://github.com/user-attachments/assets/938ee163-5153-430e-857d-f7d62a7d0d67" />
 
 ---
 
@@ -31,7 +33,6 @@ This project was developed according to the specifications provided in the Roxil
 ### Backend
 - Node.js + Express.js  
 - PostgreSQL (database)  
-- Sequelize / pg (ORM & database driver)  
 - JWT Authentication  
 
 ### Frontend
@@ -78,7 +79,8 @@ This project was developed according to the specifications provided in the Roxil
 # 1. Clone the repository
 git clone https://github.com/your-username/rating-app.git
 cd rating-app
-
+```
+```bash
 # 2. Backend Setup
 cd backend
 npm install
@@ -87,13 +89,35 @@ npm install
 PORT=5000
 DATABASE_URL=postgresql://postgres:1234@localhost:5432/rating_app
 JWT_SECRET=mysecretkey
-
+```
+```bash
 # Start backend server
 npx nodemon server.js
 # Backend runs on http://localhost:5000
-
+```
+```bash
 # 3. Frontend Setup
 cd ../frontend/rating-app
 npm install
 npm run dev
 # Frontend runs on http://localhost:5173
+```
+
+# Screenshots :
+
+## login page : 
+<img width="1911" height="865" alt="image" src="https://github.com/user-attachments/assets/1b61113f-fa17-478e-b5b0-901be87d3499" />
+
+## Signup page :  
+<img width="1917" height="864" alt="image" src="https://github.com/user-attachments/assets/591b219b-482c-4ef1-8dce-0aaff77cdf4f" />
+
+## User Dashboard : 
+<img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/9c2bfeed-e39a-4031-8c3d-7ff556a7fec9" />
+
+## Admin Dashboard : 
+<img width="1919" height="859" alt="image" src="https://github.com/user-attachments/assets/915474fa-5d8b-4c4f-930a-5913736c3fce" />
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/7b48e834-ca8f-4078-b261-8f1462d14fdc" />
+
+## Owner Dashboard : 
+<img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/5fd50e29-aaf6-4f63-a8ff-2b2928c35739" />
+
