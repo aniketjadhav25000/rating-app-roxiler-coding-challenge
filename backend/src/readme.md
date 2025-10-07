@@ -21,7 +21,9 @@ This project was developed according to the specifications provided in the Roxil
 
 ## Directory Structure
 
-(Images of backend & frontend folders will be inserted here)  
+<img width="463" height="691" alt="image" src="https://github.com/user-attachments/assets/ab12fba5-9823-4fbe-aad2-9c1bfc14aff4" />
+
+<img width="508" height="870" alt="image" src="https://github.com/user-attachments/assets/eff55927-d3c1-45dc-a4da-7363176fead6" />
 
 ---
 
@@ -72,27 +74,33 @@ This project was developed according to the specifications provided in the Roxil
 ---
 
 ## Getting Started
-
-```bash
 # 1. Clone the repository
+```bash
+
 git clone https://github.com/your-username/rating-app.git
 cd rating-app
+```
 
 # 2. Backend Setup
 cd backend
 npm install
 
 # Create .env file in /backend with the following:
+```bash
 PORT=5000
 DATABASE_URL=postgresql://postgres:1234@localhost:5432/rating_app
 JWT_SECRET=mysecretkey
-
+```
+```bash
 # Start backend server
+
 npx nodemon server.js
 # Backend runs on http://localhost:5000
-
+```
 # 3. Frontend Setup
+```bash
 cd ../frontend/rating-app
 npm install
 npm run dev
 # Frontend runs on http://localhost:5173
+```
