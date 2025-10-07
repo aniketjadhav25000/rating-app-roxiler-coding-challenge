@@ -31,8 +31,7 @@ This project was developed according to the specifications provided in the Roxil
 
 ### Backend
 - Node.js + Express.js  
-- PostgreSQL (database)  
-- Sequelize / pg (ORM & database driver)  
+- PostgreSQL (database)    
 - JWT Authentication  
 
 ### Frontend
@@ -77,7 +76,7 @@ This project was developed according to the specifications provided in the Roxil
 # 1. Clone the repository
 ```bash
 
-git clone https://github.com/your-username/rating-app.git
+git clone https://github.com/aniketjadhav25000/rating-app-roxiler-coding-challenge.git
 cd rating-app
 ```
 
@@ -104,3 +103,21 @@ npm install
 npm run dev
 # Frontend runs on http://localhost:5173
 ```
+## screenshots : 
+
+# Login Page :
+<img width="1902" height="866" alt="image" src="https://github.com/user-attachments/assets/7aad38ab-d6c9-4d54-94bc-c34c46a6c8d2" />
+
+# Signup Page : 
+<img width="1919" height="857" alt="image" src="https://github.com/user-attachments/assets/3f4f4757-48ef-453e-8938-7239e22d83a8" />
+
+# User Dashboard : 
+<img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/dda241c7-3f51-4d3a-846e-0ab464c570ae" />
+
+# Admin Dashboard : 
+<img width="1912" height="865" alt="image" src="https://github.com/user-attachments/assets/2875090c-60f3-4b90-a5c2-22ce3812a9a7" />
+<img width="1911" height="871" alt="image" src="https://github.com/user-attachments/assets/4b15b19c-c812-4f92-85f3-3335934bf6e2" />
+
+
+# Owner Dashboard : 
+<img width="1918" height="867" alt="image" src="https://github.com/user-attachments/assets/6da83b96-44e9-41e2-adb8-30a0ae46f098" />
